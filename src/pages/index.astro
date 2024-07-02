@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import SectionContainer from '../components/SectionContainer.astro'
+import Projects from '../components/Projects.astro'
+//ICONS
+import GitHub from '../icons/GitHub.astro'
+import Instagram from '../icons/Intagram.astro'
+import Whatsapp from '../icons/Whatsapp.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Email from '../icons/Email.astro';
+import Experience from '../components/Experience.astro';
+import BriefCase from '../icons/BriefCase.astro'
+import Code from '../icons/Code.astro';
+---
+
+<Layout title="Sitio de alexis - Informacion personal."
+		description='Mi sitio personal dedicado a toda mi experiencia laboral y disponibilidad para nuevas ofertas'>
+	<main class="px-4 lg:px-0">
+		<SectionContainer class="lg:min-w-[1000px] py-24 lg:py-44 pb-32">
+			<div class=" bg-gray-500 bg-clip-padding  backdrop-blur-4xl p-12 rounded-md  bg-opacity-[0.1] backdrop-saturate-100 backdrop-contrast-100 relative">
+
+				
+				<img src="../../public/projects/cohete.png" class="animate-slide-out-top absolute lg:-right-10 lg:-top-20 lg:size-80 size-60 -top-28 -right-2 -z-[999] lg:z-[99] lg:opacity-100"/>
+
+
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-col-reverse lg:flex-row gap-x-4 pb-6 lg:pb-10 logo">Jeremías Olivera<div class="flex lg:justify-start mb-3 lg:mb-0 items-center"><a href="google.com" target="_blank" rel="noopener" class="flex justify-center items-center"><Badge>Disponible para trabajar</Badge></a></div></h1>
+			<h2 class=" text-xl lg:text-2xl text-wrap max-w-[700px]">Mas de 2 anios de experiencia y Ayudante De La Comunidad, <span class="text-[--primary-color]">De buenos aires, Argentina</span> y soy web developer</h2>
+
+
+			<nav class="flex gap-4 mt-8 flex-wrap">
+					<SocialPill href="github.com">
+						<GitHub class="size-4 md:size-6"/>
+						Github
+					</SocialPill>
+					<SocialPill href="instagram.com">
+						<Instagram class="size-4 md:size-6"/>
+						Instagram
+					</SocialPill>
+					<SocialPill href="Whatsapp.com">
+						<Whatsapp class="size-4 md:size-6"/>
+						Whatsapp
+					</SocialPill>
+					<SocialPill href="mailto:alexisolivera78@gmail.com">
+						<Email class="size-4 md:size-6"/>
+						Email
+					</SocialPill>
+			</nav>
+			</div>
+		</SectionContainer>
+	<SectionContainer id="experiencia">
+		<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center"><BriefCase class="size-7"/>Experiencia Laboral</h2>
+		
+		<Experience/>
+	</SectionContainer>
+
+	<SectionContainer id="proyectos">
+		<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center"><Code class="size-7"/>Proyectos</h2>
+		
+		<Projects/>
+
+	</SectionContainer>
+	</main>
+</Layout>
+
+

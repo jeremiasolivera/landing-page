@@ -1,0 +1,51 @@
+---
+import NextJS from '../icons/NextJS.astro'
+import TailwindCss from '../icons/TailwindCss.astro'
+const TAGS = {
+    NEXT: {
+        name: "Next-js",
+        class: "bg-black text-white",
+        icon: NextJS
+    },
+    TAILWIND: {
+        name: "Tailwind-js",
+        class: "bg-[#003159] text-white",
+        icon: TailwindCss,
+    },
+};
+const PROJECTS = [
+    {
+        title: "Application UI in Tailwind CSS",
+        description:
+            "APlicacion ui de tailwindw css eso es uno sden los trbaajaosd realiazdaood paraoads para toda la comundidad de desarrolladores web",
+        link: "",
+        github: "jeremiasolivera/taiwind",
+        image: "../public/projects/web-tailwind.jpg",
+        tags: [ TAGS.NEXT, TAGS.TAILWIND],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ title, description, link, github, image, tags }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-[--primary-color] mb-2">{title}</h3>
+            <p class="text-lg mb-2 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-3">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                    <tag.icon class='size-4'/>
+                            {tag.name}
+                        </span>
+                    </li>
+))}
+            </ul>
+            <img
+                class="rounded shadow-2xl shadow-white/10 "
+                src={image}
+                alt={`Captura de pantalla de ${title}`}
+            />
+        </article>
+    ))
+}

@@ -1,0 +1,56 @@
+---
+import Header from '../components/Header.astro';
+import '@fontsource-variable/onest';
+import Footer from '../components/Footer.astro';
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="relative h-full w-full bg-[--bg-color] overflow-x-hidden">
+		<div class="absolute bottom-0 left-[5%] right-0 top-[3%] h-[500px] w-[500px] z-[-999] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(159,89,0,.40),rgba(255,255,255,0))]"></div><div class="absolute bottom-0 right-[10%] top-[35%] h-[500px] w-[500px] z-[-999] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(159,89,0,.40),rgba(255,255,255,0))]"></div>
+		<div class="absolute bottom-0 left-[5%] right-0 top-[65%] h-[500px] w-[500px] z-[-999] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(159,89,0,.40),rgba(255,255,255,0))]"></div>
+		<Header/>
+		<slot />
+		<Footer/>
+		
+	</body>
+</html>
+<style is:global>
+	:root {
+		color-scheme: dark;
+		--primary-color: rgb(251 146 60 / 0.9);
+		--bg-color: #03000c;		
+	}
+	html {
+		font-family: "Onest Variable",system-ui, sans-serif;
+		scroll-behavior: smooth;
+
+	}
+	body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	}
+
+	
+	
+	@media(prefers-reduced-motion: reduce){
+		html{
+			scroll-behavior: auto;
+		}
+	}
+</style>
